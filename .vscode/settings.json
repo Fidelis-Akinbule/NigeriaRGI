@@ -1,0 +1,57 @@
+{
+
+    // PYTHON INTERPRETER
+
+    "python.defaultInterpreterPath": "/home/fidelis-akinbule/ds/bin/python3",
+
+    // FORMATTER
+
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+
+    // LINTING
+
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false,
+    "jupyter.notebookFileRoot": "${workspaceFolder}",
+    "jupyter.jupyterServerType": "local",
+    "jupyter.allowImportFromNotebook": true,
+
+    // TERMINAL PATH FIX
+
+    "terminal.integrated.env.linux": {
+        "PYTHONPATH": "/home/fidelis-akinbule/ds/NigeriaRGI"
+    },
+
+    // DATA SCIENCE / AI SETTINGS
+
+    "python.analysis.extraPaths": [
+        "/home/fidelis-akinbule/ds/NigeriaRGI",
+        "/home/fidelis-akinbule/ds/lib/python3.12/site-packages"
+    ],
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.useImportHeuristics": true,
+
+    // AUTO ENV ACTIVATION
+
+    "python.terminal.activateEnvironment": true,
+
+    // FILE ASSOCIATIONS (DS)
+
+    "files.associations": {
+        "*.ipynb": "jupyter-notebook",
+        "*.json": "jsonc",
+        "*.env": "dotenv"
+    },
+
+    // EDITOR QUALITY OF LIFE
+
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.rulers": [],
+    "editor.wordWrap": "on",
+    "files.trimTrailingWhitespace": true,
+    "jupyter.interactiveWindow.creationMode": "perFile"
+}

@@ -1,0 +1,56 @@
+
+# DATABASE & LARGE DATA FILES
+
+data/processed/nigeria_rgi.db
+data/processed/master_table.csv
+data/processed/*.db
+data/processed/*.csv
+
+
+# PIPELINE LOGS
+
+module1_pipeline/pipeline.log
+*.log
+
+
+# PYTHON
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+
+# ENVIRONMENT
+
+.env
+.env.*
+*.env
+
+
+# VS CODE
+
+# Keep .vscode/settings.json — it is intentionally committed
+.vscode/extensions.json
+.vscode/*.log
+
+
+# JUPYTER
+
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+
+# OS
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+
+# DISTRIBUTION / BUILD
+
+dist/
+build/
+*.egg-info/
