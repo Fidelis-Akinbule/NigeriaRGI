@@ -240,7 +240,18 @@ def render(df: pd.DataFrame):
         "drives higher ARPU — the commercial case for network investment."
     )
 
-    sample = df.sample(min(2000, len(df)), random_state=42)
+    import numpy as np
+    sample = df.sample(min(2000, len(df)), random_state=42).copy()
+
+    z = np.polyfit(sample["avg_mos_score"], sample["arpu_monthly_est"], 1)
+    p = np.poly1d(z)
+    x_line = np.linspace(
+        sample["avg_mos_score"].min(),
+        sample["avg_mos_score"].max(),
+        100
+    )
+    y_line = p(x_line)
+
     fig7 = px.scatter(
         sample,
         x="avg_mos_score",
@@ -252,9 +263,13 @@ def render(df: pd.DataFrame):
             "avg_mos_score":    "MOS Score",
             "arpu_monthly_est": "Monthly ARPU (₦)",
         },
-        trendline="ols",
-        trendline_scope="overall",
-        trendline_color_override=RED,
+    )
+    fig7.add_scatter(
+        x=x_line,
+        y=y_line,
+        mode="lines",
+        name="Trend",
+        line=dict(color=RED, width=2, dash="dash"),
     )
     fig7.add_vline(x=3.5, line_dash="dash", line_color=RED,
                    annotation_text="NCC threshold")
